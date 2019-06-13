@@ -1,0 +1,53 @@
+<?php
+/**
+ *Implements hook_schema
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * create  demo_contact table
+ * @return mixed
+ */
+function demo_schema(){
+  $schema['demo_contact'] = [
+    'description' => 'The base table of messages.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary Key: Unique history ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'received_at' => [
+        'description' => 'Timestamp of send message.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'title' => [
+          'description' => 'The message title.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+          'default' => '',
+        ],
+      'email' => [
+          'description' => 'The message email.',
+          'type' => 'varchar',
+          'length' => 50,
+          'not null' => TRUE,
+          'default' => '',
+        ],
+      'message' => [
+        'type' => 'varchar',
+        'description' => "The message body.",
+        'length' => 750,
+        'not null' => TRUE,
+        'default' => '',
+      ]
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}
+

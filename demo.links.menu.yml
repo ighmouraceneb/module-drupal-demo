@@ -4,3 +4,9 @@ demo.linkhello:
   parent: main
   route_name: demo.description 
 
+demo.linkcontact: 
+  title: Contact
+  description: 'Ceci est une description du lien Contact-me'
+  parent: main
+  route_name: demo_contact_form
+
