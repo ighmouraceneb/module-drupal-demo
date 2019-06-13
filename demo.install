@@ -19,11 +19,6 @@ function demo_schema(){
         'unsigned' => TRUE,
         'not null' => TRUE,
       ],
-      'received_at' => [
-        'description' => 'Timestamp of send message.',
-        'type' => 'int',
-        'not null' => TRUE,
-      ],
       'title' => [
           'description' => 'The message title.',
           'type' => 'varchar',
@@ -44,7 +39,13 @@ function demo_schema(){
         'length' => 750,
         'not null' => TRUE,
         'default' => '',
-      ]
+      ],
+      'received_at' => [
+        'description' => 'Timestamp of received message.',
+        'type' => 'timestamp',
+        'not null' => TRUE,
+        'default' => CURRENT_TIMESTAMP,
+      ],
     ],
     'primary key' => ['id'],
   ];

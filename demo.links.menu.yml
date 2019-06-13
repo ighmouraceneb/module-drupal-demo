@@ -1,12 +1,12 @@
 demo.linkhello: 
   title: Link Hello
   description: 'Ceci est une description du lien link Hello'
-  parent: main
+  menu_name: main
   route_name: demo.description 
 
 demo.linkcontact: 
   title: Contact
   description: 'Ceci est une description du lien Contact-me'
-  parent: main
+  menu_name: main
   route_name: demo_contact_form
 
