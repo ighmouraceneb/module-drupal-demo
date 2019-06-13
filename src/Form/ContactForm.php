@@ -21,7 +21,7 @@ class ContactForm extends FormBase {
 		
 		$form = array();
 
-		$form['content_title'] = [
+		$form['contact_title'] = [
 			'#type' => 'textfield', 
 			'#title' => $this->t('title'), 
 			'#maxlenght' => 255, 
@@ -86,10 +86,23 @@ class ContactForm extends FormBase {
 	}
 
 	public function submitForm(array &$form, FormStateInterface $form_state) {
+
+		$connection = \Drupal::database();
+		
 		$email_value = $form_state->getValue('contact_email');
+		$message_value = $form_state->getValue('contact_message');
+		$title_value = $form_state->getValue('contact_title');
 
 		$msg = 'Votre message a bien été envoyé. Une confirmation à été envoyée à '.$email_value;
-
+		
+		$result = $connection->insert('demo_contact')
+		  ->fields([
+		    'title' => $title_value,
+		    'email' => $email_value,
+		    'message' => $message_value,
+		  ])
+		  ->execute();
+		
 		drupal_set_message($msg);
 	}
 
