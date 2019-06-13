@@ -1,0 +1,6 @@
+demo.linkhello: 
+  title: Link Hello
+  description: 'Ceci est une description du lien link Hello'
+  parent: main
+  route_name: demo.description 
+

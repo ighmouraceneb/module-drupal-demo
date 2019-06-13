@@ -1,0 +1,6 @@
+name: Demo module
+description: Description du module demo
+package: Modules custom
+core: 8.x
+version: 8.x-0.1
+type: module

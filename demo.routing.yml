@@ -1,0 +1,16 @@
+demo.description:
+  path: '/demo/hello-word'
+  defaults: 
+    _controller: '\Drupal\demo\Controller\DemoController::description'
+    _title: 'Hello word title'
+  requirements:
+    _access: 'TRUE'
+    _permission: 'access content'
+
+demo_contact_form:
+  path: '/demo/contact'
+  defaults:
+    _form: '\Drupal\demo\Form\ContactForm'
+    _title: 'Formulaire de contact'
+  requirements:
+    _permission: 'access content'
